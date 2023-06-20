@@ -1,0 +1,22 @@
+id: 861a9d52-5301-4fa5-8568-3b9f878ae5d1
+timestamp: 2023-06-20T00:13:41Z
+username: zahooruk2022
+source: TAP-GUI
+accelerator:
+  name: spring-cloud-serverless
+  source:
+    image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:6f49bb69638b65c3e39cade1d8c4d2e5bf0fd90fde422107789a2e3e86ca5a50
+fragments:
+  - name: build-wrapper-maven
+    source:
+      image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: tap-workload
+    source:
+      image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=zahooruk2022&repo=spring-cloud-serverless
+  deploymentType: workload
+  includeBuildToolWrapper: true
+  projectName: spring-cloud-serverless
+  sourceRepositoryPrefix: dev.local
